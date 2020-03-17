@@ -1,14 +1,16 @@
 package sample.coroutines.async
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.Dispatchers.Unconfined
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import sample.coroutines.printFormatMsg
 
 object CommonUsage {
 
     suspend fun suspendFun1(param : Int) : Int {
         printFormatMsg("enter suspendFun1()")
-        var result = GlobalScope.async {
+        val result = GlobalScope.async {
             suspendFun2(param)
         }
         printFormatMsg("done suspendFun1()")
