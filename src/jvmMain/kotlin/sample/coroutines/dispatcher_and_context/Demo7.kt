@@ -5,7 +5,7 @@ import kotlinx.coroutines.*
 //vm options -Dkotlinx.coroutines.debug
 
 @ObsoleteCoroutinesApi
-fun main() = runBlocking<Unit> {
+fun main() = runBlocking<Unit>(CoroutineName("actMain")) {
     log("Started main coroutine")
    // 运行两个后台值计算
     val v1 = async(CoroutineName("v1coroutine")) {
