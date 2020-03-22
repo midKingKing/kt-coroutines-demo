@@ -1,11 +1,9 @@
 package sample.coroutines.dispatcher_and_context
 
 import kotlinx.coroutines.*
+import sample.coroutines.log
 
 //vm options -Dkotlinx.coroutines.debug
-
-fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
-
 @ObsoleteCoroutinesApi
 fun main() = runBlocking {
     log("ready to exec")

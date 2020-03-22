@@ -24,6 +24,11 @@ fun main() = runBlocking<Unit> {
     }
 
     // 收集这个流
-    foo().collect { value -> println(value) }
+    println("Calling foo...")
+    val flow = foo()
+    println("Calling collect...")
+    flow.collect { value -> println(value) }
+    println("Calling collect again...")
+    flow.collect { value -> println(value) }
 
 }
